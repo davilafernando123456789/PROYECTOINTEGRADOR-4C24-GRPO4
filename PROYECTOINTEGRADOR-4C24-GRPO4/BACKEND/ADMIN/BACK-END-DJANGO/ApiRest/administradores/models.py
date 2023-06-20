@@ -14,3 +14,13 @@ class Administrador(models.Model):
 
     def verificar_credenciales(self, password):
         return self.password == password
+
+    def to_json(self):
+        return {
+            'idAdministrador': self.idAdministrador,
+            'nombres': self.nombres,
+            'apellidos': self.apellidos,
+            'email': self.email,
+            'telefono': self.telefono,
+            'direccion': self.direccion
+        }

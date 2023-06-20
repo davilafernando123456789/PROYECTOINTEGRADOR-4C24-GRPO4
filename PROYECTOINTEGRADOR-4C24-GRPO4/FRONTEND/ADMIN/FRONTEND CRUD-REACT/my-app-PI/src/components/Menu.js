@@ -1,9 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { RiFileTextLine, RiDashboardLine, RiFileListLine, RiBookOpenLine, RiChatSmile3Line, RiSettings5Line } from 'react-icons/ri';
-import Carousel from 'react-bootstrap/Carousel';
+import { RiUser3Line, RiUserSettingsLine, RiAccountPinCircleLine, RiBookOpenLine, RiSettings5Line } from 'react-icons/ri';
+import { useLocation , Link} from 'react-router-dom';
 
-const Menu = ({ content }) => {
+const Menu = (props) => {
+  const { adminName, content } = props;
+  const location = useLocation();
+
+
   return (
     <div className="d-flex">
       <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-primary" style={{ width: '280px', height: '100vh' }}>
@@ -17,48 +21,46 @@ const Menu = ({ content }) => {
           <div className="mt-auto">
             <div className="d-flex align-items-center text-white">
               <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
-              <strong>Admin</strong>
+              <strong>{adminName}</strong>
             </div>
           </div>
           <ul className="nav nav-pills flex-column mb-auto">
             <li>
-              <a href="/usuarios" className="nav-link text-white">
-                <RiBookOpenLine size={16} className="me-2" />
-                Usuarios
-              </a>
+            <Link to="/usuarios" className="nav-link text-white">
+              <RiUser3Line size={16} className="me-2" />
+              Usuarios
+            </Link>
             </li>
             <li>
-              <a href="/profesores" className="nav-link text-white">
-                <RiBookOpenLine size={16} className="me-2" />
-                Profesores
-              </a>
+            <Link to="/cursos" className="nav-link text-white">
+              <RiBookOpenLine size={16} className="me-2" />
+              Cursos
+            </Link>
             </li>
             <li>
-              <a href="/administradores" className="nav-link text-white">
-                <RiFileTextLine size={16} className="me-2" />
-                Administradores
-              </a>
+            <Link to="/profesores" className="nav-link text-white">
+              <RiAccountPinCircleLine size={16} className="me-2" />
+              Profesores
+            </Link>
             </li>
             <li>
-              <a href="#" className="nav-link text-white">
-                <RiChatSmile3Line size={16} className="me-2" />
-                Comentarios
-              </a>
+            <Link to="/administradores" className="nav-link text-white">
+              <RiUserSettingsLine size={16} className="me-2" />
+              Administradores
+            </Link>
             </li>
             <li>
-              <a href="#" className="nav-link text-white">
-                <RiSettings5Line size={16} className="me-2" />
-                Configuración
-              </a>
+            <Link to="/menu" className="nav-link text-white">
+              <RiSettings5Line size={16} className="me-2" />
+              Configuración
+            </Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="flex-grow-1">
         {content}
-        
       </div>
-      
     </div>
   );
 };

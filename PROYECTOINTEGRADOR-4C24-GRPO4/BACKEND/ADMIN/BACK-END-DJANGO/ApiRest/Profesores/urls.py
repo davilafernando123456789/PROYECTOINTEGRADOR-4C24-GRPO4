@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import ProfesorViewSet
+from .views import ProfesorAPIView, ProfesorDetailAPIView
 
 urlpatterns = [
-    path('', ProfesorViewSet.as_view({'get': 'list', 'post': 'create'}), name='administrador-list'),
-    path('<int:pk>/', ProfesorViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='administrador-detail'),
+    path('', ProfesorAPIView.as_view(), name='curso-list'),
+    path('<int:pk>/', ProfesorDetailAPIView.as_view(), name='curso-detail'),
 ]

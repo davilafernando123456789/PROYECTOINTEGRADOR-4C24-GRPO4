@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'usuarios',
     'administradores',
     'Profesores',
+    'cursos',
     'rest_framework',
     'corsheaders',
 ]
