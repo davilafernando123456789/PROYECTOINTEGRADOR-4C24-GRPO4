@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Menu from './components/Menu';
 import Usuario from './components/Usuario';
 import Administrador from './components/Administrador';
+import Profesor from './components/Profesor';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/menu" component={Menu} />
           <Route path="/usuarios" render={() => <Menu content={<Usuario />} />} />
           <Route path="/administradores" render={() => <Menu content={<Administrador />} />} />
+          <Route path="/profesores" render={() => <Menu content={<Profesor />} />} />
         </Switch>
       </div>
     </Router>

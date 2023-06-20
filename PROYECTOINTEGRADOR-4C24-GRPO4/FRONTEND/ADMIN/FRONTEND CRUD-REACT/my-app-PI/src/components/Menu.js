@@ -28,6 +28,12 @@ const Menu = ({ content }) => {
               </a>
             </li>
             <li>
+              <a href="/profesores" className="nav-link text-white">
+                <RiBookOpenLine size={16} className="me-2" />
+                Profesores
+              </a>
+            </li>
+            <li>
               <a href="/administradores" className="nav-link text-white">
                 <RiFileTextLine size={16} className="me-2" />
                 Administradores
