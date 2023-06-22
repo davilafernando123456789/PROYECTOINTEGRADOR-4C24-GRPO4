@@ -4,6 +4,7 @@ from rest_framework import status
 from django.http import Http404
 from .models import Usuario
 from .serializers import UsuarioSerializer
+import bcrypt
 
 class UsuarioAPIView(APIView):
     def get(self, request):
@@ -14,6 +15,11 @@ class UsuarioAPIView(APIView):
     def post(self, request):
         serializer = UsuarioSerializer(data=request.data)
         if serializer.is_valid():
+            # Cifrar la contraseña antes de guardarla
+            password = serializer.validated_data['password']
+            encrypted_password = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+            serializer.validated_data['password'] = encrypted_password
+
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

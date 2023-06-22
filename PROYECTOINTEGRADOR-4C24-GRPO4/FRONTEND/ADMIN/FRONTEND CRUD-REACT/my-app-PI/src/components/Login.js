@@ -17,7 +17,7 @@ const Login = ({ setAdminName }) => {
 
       if (response.status === 200) {
         const { nombres } = response.data;
-        setAdminName(nombres); // Establece el nombre del administrador en el componente App
+        setAdminName(nombres);
         history.push('/menu', { adminName: nombres });
       } else {
         alert('Error: ' + response.status);

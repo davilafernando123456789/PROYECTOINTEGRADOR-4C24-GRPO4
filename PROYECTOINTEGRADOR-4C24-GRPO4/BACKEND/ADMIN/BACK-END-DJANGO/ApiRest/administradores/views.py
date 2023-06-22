@@ -1,3 +1,4 @@
+import bcrypt
 from rest_framework import viewsets
 from .models import Administrador
 from .serializers import AdministradorSerializer
@@ -10,7 +11,6 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.http import Http404
-
 
 class LoginView(APIView):
     def post(self, request):
@@ -29,19 +29,19 @@ class LoginView(APIView):
             return Response({'message': 'Credenciales inválidas'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
-
 class AdministradorAPIView(APIView):
     def get(self, request):
         administradores = Administrador.objects.all()
         serializer = AdministradorSerializer(administradores, many=True)
         return Response(serializer.data)
-
+    
     def post(self, request):
         serializer = AdministradorSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class AdministradorDetailAPIView(APIView):
     def get_object(self, pk):
@@ -67,4 +67,3 @@ class AdministradorDetailAPIView(APIView):
         administrador = self.get_object(pk)
         administrador.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-

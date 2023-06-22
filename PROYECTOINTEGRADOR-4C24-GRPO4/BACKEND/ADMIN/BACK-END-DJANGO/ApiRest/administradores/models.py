@@ -1,7 +1,8 @@
 from django.db import models
+import bcrypt
 
 class Administrador(models.Model):
-    idAdministrador = models.AutoField(primary_key=True)
+    idAdministrador = models.BigAutoField(primary_key=True)
     nombres = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
@@ -13,14 +14,11 @@ class Administrador(models.Model):
         return self.email
 
     def verificar_credenciales(self, password):
-        return self.password == password
+        return bcrypt.checkpw(password.encode('utf-8'), self.password.encode('utf-8'))
 
-    def to_json(self):
-        return {
-            'idAdministrador': self.idAdministrador,
-            'nombres': self.nombres,
-            'apellidos': self.apellidos,
-            'email': self.email,
-            'telefono': self.telefono,
-            'direccion': self.direccion
-        }
+    def save(self, *args, **kwargs):
+        if not self.idAdministrador:
+            # Nuevo registro, encriptar la contraseña
+            hashed_password = bcrypt.hashpw(self.password.encode('utf-8'), bcrypt.gensalt())
+            self.password = hashed_password.decode('utf-8')
+        super().save(*args, **kwargs)
