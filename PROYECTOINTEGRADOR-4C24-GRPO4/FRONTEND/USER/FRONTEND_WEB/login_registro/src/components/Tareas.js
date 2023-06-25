@@ -1,5 +1,5 @@
 import React from 'react';
-import { RiFileTextLine, RiDashboardLine, RiFileListLine, RiBookOpenLine, RiChatSmile3Line, RiSettings5Line } from 'react-icons/ri';
+import Menu from './Menu';
 
 const Tareas = () => {
   const tareas = [
@@ -25,60 +25,7 @@ const Tareas = () => {
   ];
 
   return (
-    <div className="d-flex">
-      <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-primary" style={{ width: '280px', height: '100vh' }}>
-        <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <svg className="bi pe-none me-2" width="40" height="32"><use xlinkHref="#bootstrap"/></svg>
-          <div className="dropdown">
-            <a href="#" className="d-flex align-items-center text-white text-decoration-none " data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
-              <strong>Eduardo</strong>
-            </a>
-          </div>
-        </a>
-        <hr />
-        <ul className="nav nav-pills flex-column mb-auto">
-  <li className="nav-item">
-    <a href="#" className="nav-link active" aria-current="page">
-      <RiDashboardLine size={16} className="me-2" />
-      Cursos
-    </a>
-  </li>
-  <li>
-    <a href="#" className="nav-link text-white">
-      <RiFileListLine size={16} className="me-2" />
-      Módulos
-    </a>
-  </li>
-  <li>
-    <a href="/Tareas" className="nav-link text-white">
-      <RiBookOpenLine size={16} className="me-2" />
-      Tareas
-    </a>
-  </li>
-  <li>
-    <a href="#" className="nav-link text-white">
-      <RiFileTextLine size={16} className="me-2" />
-      Resúmenes
-    </a>
-  </li>
-  <li>
-    <a href="#" className="nav-link text-white">
-      <RiChatSmile3Line size={16} className="me-2" />
-      Comentarios
-    </a>
-  </li>
-  <li>
-    <a href="#" className="nav-link text-white">
-      <RiSettings5Line size={16} className="me-2" />
-      Configuración
-    </a>
-  </li>
-</ul>
-
-
-
-      </div>
+    <Menu>
       <div className="container">
         <h1 className="text-primary">Tareas</h1>
         <div className="row">
@@ -106,7 +53,7 @@ const Tareas = () => {
           ))}
         </div>
       </div>
-    </div>
+    </Menu>
   );
 };
 
