@@ -51,12 +51,11 @@ const Gpt = () => {
         <Menu>
         <div class="container">
             <div class="header-section text-center">
-                <h1>ChatBox</h1>
+                <h1><b>ChatBox</b></h1>
                 <p>
-                    Bienvenido al ChatBox para resolver tus dudas sobre cualquier tema de estudio.
+                Explora y aprende con ChatBox, donde tus preguntas encuentran respuestas. ¡Aprende sin límites y despeja tus dudas!
                 </p>
             </div>
-
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <FormSection generateResponse={generateResponse} />

@@ -26,8 +26,8 @@ class Calendar extends React.Component {
 
     return (
       <Menu>
-      <div className="calendar">
-        <h2 className="calendar__heading">Calendario</h2>
+      <div className="calendar" style={{ backgroundColor: '#f2f2f2', padding: '20px' }}>
+        <h2 className="calendar__heading" style={{ fontWeight: 'bold' }}>Calendario</h2>
         <div className="calendar__nav">
           <button className="calendar__nav-btn" onClick={this.prevMonth}>
             Anterior
@@ -57,7 +57,7 @@ class Calendar extends React.Component {
                 {Array.from({ length: 7 }, (_, dayIndex) => {
                   const dayNumber = weekIndex * 7 + dayIndex + 1 - firstDay;
                   const isCurrentMonth = dayNumber > 0 && dayNumber <= numDays;
-
+    
                   return (
                     <td
                       key={dayIndex}
@@ -72,7 +72,8 @@ class Calendar extends React.Component {
           </tbody>
         </table>
       </div>
-      </Menu>
+    </Menu>
+    
     );
   }
 

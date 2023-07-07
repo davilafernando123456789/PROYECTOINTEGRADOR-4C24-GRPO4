@@ -16,7 +16,7 @@ const Menu = ({ children }) => {
       <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-primary menu-sidebar">
         <header className="bg-primary py-3">
           <div className="container">
-            <h1 className="text-white">GeniusTec</h1>
+            <h1 className="text-white"><b>GeniusTec</b></h1>
           </div>
         </header>
 
@@ -102,7 +102,7 @@ const Menu = ({ children }) => {
         ) : (
           <div className="flex-grow-1 welcome-container">
             <div className="container">
-              <h1 className="text-primary">Bienvenido, Eduardo</h1>
+            <h1 className="text-black" style={{ textAlign: 'center' }}>Bienvenido, Eduardo</h1>
               <div className="row">
                 <div className="mb-4">
                   <div className="col-md-3">

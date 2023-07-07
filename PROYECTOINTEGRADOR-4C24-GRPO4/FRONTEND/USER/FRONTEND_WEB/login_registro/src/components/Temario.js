@@ -24,7 +24,7 @@ class Temario extends React.Component {
         contenido = (
           <div>
             <h2>Bimestre 1</h2>
-            <ul>
+            <ul style={{ listStyleType: 'none' }}>
               <li>Introducción a React</li>
               <li>Manejo de eventos en React</li>
               <li>Enrutamiento en React</li>
@@ -37,7 +37,7 @@ class Temario extends React.Component {
         contenido = (
           <div>
             <h2>Bimestre 2</h2>
-            <ul>
+            <ul style={{ listStyleType: 'none' }}>
               <li>Uso de APIs en React</li>
               <li>Diseño de componentes reutilizables</li>
               <li>Pruebas unitarias en React</li>
@@ -50,7 +50,7 @@ class Temario extends React.Component {
         contenido = (
           <div>
             <h2>Bimestre 3</h2>
-            <ul>
+            <ul style={{ listStyleType: 'none' }}>
               <li>Hooks en React</li>
               <li>Estilizado en React</li>
               <li>Animaciones en React</li>
@@ -64,10 +64,10 @@ class Temario extends React.Component {
     }
 
     return (
-        <Menu>
-      <div className="temario">
-        <h1 className="temario__heading">Temario</h1>
-        <div className="temario__buttons">
+      <Menu>
+      <div className="temario" style={{ backgroundColor: 'lightblue', padding: '20px' }}>
+        <h1 className="temario__heading" style={{ color: 'black', textAlign: 'center' }}><b>Temario</b></h1>
+        <div className="temario__buttons" style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
           <button
             className={`temario__button ${bimestre === 1 ? 'active' : ''}`}
             onClick={() => this.cambiarBimestre(1)}
@@ -87,7 +87,8 @@ class Temario extends React.Component {
             Bimestre 3
           </button>
         </div>
-        <div className="temario__contenido">{contenido}</div>
+        <div className="temario__contenido" style={{ textAlign: 'center' }}>{contenido}</div>
+
       </div>
       </Menu>
     );
@@ -95,3 +96,4 @@ class Temario extends React.Component {
 }
 
 export default Temario;
+ 

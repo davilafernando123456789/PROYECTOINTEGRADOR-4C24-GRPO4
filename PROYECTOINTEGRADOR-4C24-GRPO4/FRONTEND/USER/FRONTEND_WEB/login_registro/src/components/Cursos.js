@@ -33,7 +33,7 @@ const Cursos = () => {
   return (
     <Menu>
       <div className="container">
-        <h1 className="text-primary">Cursos</h1>
+        <h1 className="text-dark" style={{ textAlign: 'center' }}>Cursos</h1>
         <div className="row">
           {cursos.map((curso) => (
             <div className="col-md-4 mb-4" key={curso.idCurso}>

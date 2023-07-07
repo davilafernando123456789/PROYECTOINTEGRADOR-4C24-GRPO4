@@ -10,12 +10,12 @@ const FormSection = ({ generateResponse }) => {
             <textarea
                 rows="5"
                 class="form-control"
-                placeholder="Escribe aqui la regunta que desees realizar"
+                placeholder="Escribe aquí la pregunta que desees realizar"
                 value={newQuestion}
                 onChange={(e) => setNewQuestion(e.target.value)}
             ></textarea><br></br>
             <button class="btn btn-primary" onClick={() => generateResponse(newQuestion, setNewQuestion)}>
-                Enviar pregunta...
+                Enviar pregunta
             </button>
         </div>
 

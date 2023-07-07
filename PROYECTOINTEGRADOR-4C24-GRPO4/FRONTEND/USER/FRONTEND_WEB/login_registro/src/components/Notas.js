@@ -12,14 +12,14 @@ const Notas = () => {
 
   return (
     <Menu>
-     <div>
-      <h1>Notas del Alumno</h1>
+    <div className="container">
+      <h1 className="text-center">Notas del Alumno</h1>
 
-      <table className="notas-table">
-        <thead>
+      <table className="table notas-table">
+        <thead className="thead-dark">
           <tr>
-            <th>Materia</th>
-            <th>Nota</th>
+            <th scope="col">Materia</th>
+            <th scope="col">Nota</th>
           </tr>
         </thead>
         <tbody>
@@ -32,7 +32,7 @@ const Notas = () => {
         </tbody>
       </table>
     </div>
-    </Menu>
+  </Menu>
   );
 };
 
