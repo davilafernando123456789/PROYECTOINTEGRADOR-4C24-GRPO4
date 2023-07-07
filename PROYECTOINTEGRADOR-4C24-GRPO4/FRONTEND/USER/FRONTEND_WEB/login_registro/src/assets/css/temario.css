@@ -1,43 +1,57 @@
 .temario {
-  font-family: Arial, sans-serif;
-  width: 800px; /* Ajusta el ancho según tus necesidades */
-  margin: 100px auto 0; /* Ajusta el margen superior según tus necesidades */
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  padding: 40px; /* Ajusta el padding según tus necesidades */
+  background-color:rgb(133, 226, 243);
+  padding: 20px;
 }
-
+body {
+  background-color: rgb(133, 226, 243);
+}
 .temario__heading {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333;
+  color: black;
+  text-align: center;
 }
 
 .temario__buttons {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .temario__button {
-  background-color: #fff;
-  color: #333;
+  margin: 0 10px;
+  padding: 5px 10px;
+  background-color: lightgray;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  padding: 8px 16px;
-  font-size: 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
 }
 
 .temario__button.active {
-  background-color: #333;
-  color: #fff;
+  background-color: gray;
+  color: white;
 }
 
-.temario__contenido {
-  background-color: #fff;
-  border: 1px solid #ccc;
+
+.temario__table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.temario__table th,
+.temario__table td {
   padding: 10px;
-  color: #333;
+  border: 1px solid black;
+}
+
+.temario__table th {
+  background-color: lightgray;
+}
+
+.temario__temas {
+  list-style-type: none;
+  padding: 0;
+}
+
+.temario__temas li {
+  margin-bottom: 5px;
 }
