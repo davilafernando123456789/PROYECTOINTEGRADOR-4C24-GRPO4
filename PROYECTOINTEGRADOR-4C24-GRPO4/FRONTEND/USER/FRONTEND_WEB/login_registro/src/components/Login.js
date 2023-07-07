@@ -1,27 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import '../assets/css/bootstrap.css';
+import '../assets/css/login.css';
 import useAuth from '../hooks/useAuth';
 import useInput from '../hooks/useInput';
 import useToggle from '../hooks/useToggle';
 import axios from 'axios';
 
 const LOGIN_URL = 'http://localhost:8080/api/usuarios/login';
-
-const Header = () => {
-  return (
-    <header className="bg-primary py-3">
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <h1 className="text-white">GeniusTec</h1>
-          </div>
-        </div>
-      </div>
-    </header>
-  );
-};
-
 const Login = () => {
   const { setAuth } = useAuth();
 
@@ -94,17 +80,13 @@ const Login = () => {
 
   return (
     <section>
-      <Header />
-      <div className="container-fluid mt-5">
-        <div className="row">
-          <div className="col-md-6">
-            <img src="/login.avif" alt="Imagen" className="img-fluid" />
-          </div>
-          <div className="col-md-6">
-            <div className="border p-4">
+       <div className="container-fluid  login-container">
+        <div className="row justify-content-start align-items-center vh-100"> {/* Ajuste: Cambiar "justify-content-start" por "justify-content-center" */}
+          <div className="col-md-4 ml-3 login-form">
+          <div className="border p-3 bg-write bg-opacity-75 text-white">
               <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-              <header className="bg-primary p-4 container">
-                <h1 className="text-white text-center">Welcome</h1>
+              <header >
+              <h1 className="text-center login-header ">GeniusTec</h1>
               </header>
               <form onSubmit={handleSubmit}>
                 <div className="form-group">

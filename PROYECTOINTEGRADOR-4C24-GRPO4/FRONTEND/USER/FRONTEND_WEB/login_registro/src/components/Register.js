@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Importa Axios
 
 import '../assets/css/bootstrap.css';
+import '../assets/css/registro.css';
 
 const Register = () => {
   const [apellidos, setApellidos] = useState('');
@@ -77,31 +78,15 @@ const Register = () => {
         </section>
       ) : (
         <section>
-          <header className="bg-primary py-3">
-            <div className="container">
-              <div className="row">
-                <div className="col">
-                  <h1 className="text-white">GeniusTec</h1>
-                </div>
-              </div>
-            </div>
-          </header>
-          <div className="container mt-4">
-            <div className="row">
-              <div className="col-md-6">
-                <div className="image-container">
-                  <img src="/login.avif" alt="Imagen" className="img-fluid" />
-                </div>
-              </div>
-              <div className="col-md-5">
-                <div className="border p-2">
+          <div className="container-fluid  registro-container">
+        <div className="row justify-content-start align-items-center vh-100"> {/* Ajuste: Cambiar "justify-content-start" por "justify-content-center" */}
+          <div className="col-md-4 ml-3 registro-form">
+          <div className="border p-3 bg-write bg-opacity-75 text-white">
                   <p className={errMsg ? 'errmsg' : 'offscreen'} aria-live="assertive">
                     {errMsg}
                   </p>
-                  <header className="bg-primary p-3">
-                    <div className="container">
-                      <h1 className="text-white text-center">Registrate</h1>
-                    </div>
+                  <header>
+                    <h1 className="text-center registro-header ">GeniusTec</h1>
                   </header>
                   <form onSubmit={handleSubmit}>
                     <div className="form-group">

@@ -1,5 +1,6 @@
 // src/App.js
 import { Configuration, OpenAIApi } from 'openai';
+import openai from 'openai';
 
 import FormSection from './FormSection';
 import AnswerSection from './AnswerSection';

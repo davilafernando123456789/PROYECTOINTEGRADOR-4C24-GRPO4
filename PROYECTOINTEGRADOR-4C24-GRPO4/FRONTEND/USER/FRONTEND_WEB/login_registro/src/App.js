@@ -9,6 +9,14 @@ import Home from './components/Home';
 import Menu from './components/Menu';
 import Gpt from './components/Gpt';
 import Tareas from './components/Tareas';
+import Cursos from './components/Cursos';
+import Notas from './components/Notas';
+import Horario from './components/Horario';
+import Detallecurso from './components/Detallecurso';
+import Configuraciones from './components/Configuraciones';
+import Calendario from './components/Calendario';
+import Temario from './components/Temario';
+import Comentarios from './components/Comentarios';
 import FormSection from './components/FormSection';
 import Editor from './components/Editor';
 import Admin from './components/Admin';
@@ -19,6 +27,7 @@ import LinkPage from './components/LinkPage';
 import RequireAuth from './components/RequireAuth';
 import PersistLogin from './components/PersistLogin';
 import AnswerSection from './components/AnswerSection';
+
 
 const ROLES = {
   'User': 2001,
@@ -38,9 +47,18 @@ function App() {
       <Route path="/" element={<Layout />}>
         {/* public routes */}
         <Route path="login" element={<Login />} />
+        <Route path="home" element={<Home />} />
         <Route path="register" element={<Register />} />
         <Route path="menu" element={<Menu />} />
         <Route path="tareas" element={<Tareas />} />
+        <Route path="cursos" element={<Cursos />} />
+        <Route path="horario" element={<Horario />} />
+        <Route path="detallecurso" element={<Detallecurso />} />
+        <Route path="configuraciones" element={<Configuraciones />} />
+        <Route path="comentarios" element={<Comentarios />} />
+        <Route path="notas" element={<Notas />} />
+        <Route path="calendario" element={<Calendario />} />
+        <Route path="temario" element={<Temario />} />
         <Route path="chat" element={<FormSection openai={openai} />} />
         <Route path="chatb" element={<AnswerSection openai={openai} />} />
         <Route path="chatbox" element={<Gpt openai={openai} />} />

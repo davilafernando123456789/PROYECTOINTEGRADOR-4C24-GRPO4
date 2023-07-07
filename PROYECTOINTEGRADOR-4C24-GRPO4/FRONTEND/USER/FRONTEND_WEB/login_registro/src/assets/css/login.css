@@ -1,0 +1,32 @@
+.login-container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    min-height: 10px; /* Ejemplo de altura mínima */
+    background-image: url('/public/registro.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .login-container .border {
+    background-color: rgba(187, 230, 244, 0.75);
+  }
+  
+  .login-header {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    background-color: #2e71ee; /* Cambia este valor al color celeste más claro que desees */
+  }
+  
+  .login-header h1 {
+    text-align: center;
+    color: white;
+  }
+  
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+    margin-right: auto;
+  }
+  
