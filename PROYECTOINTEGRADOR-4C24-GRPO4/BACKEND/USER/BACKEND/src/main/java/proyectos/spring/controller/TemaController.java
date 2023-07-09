@@ -14,61 +14,59 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import proyectos.spring.model.Comentario;
 import proyectos.spring.model.Curso;
 import proyectos.spring.model.Tema;
-import proyectos.spring.repository.CursoRepository;
 import proyectos.spring.repository.TemaRepository;
-import proyectos.spring.service.CursoService;
+import proyectos.spring.service.TemaService;
+
 
 @RestController
-@RequestMapping("/cursos")
-public class CursoController {
-    private final CursoService cursoService;
+@RequestMapping("/temas")
+public class TemaController {
+    private final TemaService temaService;
 
-    public CursoController(CursoService cursoService) {
-        this.cursoService = cursoService;
+    public TemaController(TemaService temaService) {
+        this.temaService = temaService;
     }
-    
     @GetMapping
-    public ResponseEntity<List<Curso>> getAllCursos() {
-        List<Curso> cursos = cursoService.getAllCursos();
-        if (!cursos.isEmpty()) {
-            return ResponseEntity.ok(cursos);
+    public ResponseEntity<List<Tema>> getAllTemas() {
+        List<Tema> temas = temaService.getAllTemas();
+        if (!temas.isEmpty()) {
+            return ResponseEntity.ok(temas);
         } else {
             return ResponseEntity.noContent().build();
         }
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Curso> getCursoById(@PathVariable("id") Long id) {
-        Curso curso = cursoService.getCursoById(id);
-        if (curso != null) {
-            return ResponseEntity.ok(curso);
+    public ResponseEntity<Tema> getTemaById(@PathVariable("id") Long id) {
+        Tema tema = temaService.getTemaById(id);
+        if (tema != null) {
+            return ResponseEntity.ok(tema);
         } else {
             return ResponseEntity.notFound().build();
         }
     }
 
     @PostMapping
-    public ResponseEntity<Curso> createCurso(@RequestBody Curso curso) {
-        Curso createdCurso = cursoService.createCurso(curso);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdCurso);
+    public ResponseEntity<Tema> createTema(@RequestBody Tema tema) {
+        Tema createdTema = temaService.createTema(tema);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdTema);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Curso> updateCurso(@PathVariable("id") Long id, @RequestBody Curso curso) {
-        Curso updatedCurso = cursoService.updateCurso(id, curso);
-        if (updatedCurso != null) {
-            return ResponseEntity.ok(updatedCurso);
+    public ResponseEntity<Tema> updateTema(@PathVariable("id") Long id, @RequestBody Tema tema) {
+        Tema updatedTema = temaService.updateTema(id, tema);
+        if (updatedTema != null) {
+            return ResponseEntity.ok(updatedTema);
         } else {
             return ResponseEntity.notFound().build();
         }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCurso(@PathVariable("id") Long id) {
-        boolean deleted = cursoService.deleteCurso(id);
+    public ResponseEntity<Void> deleteTema(@PathVariable("id") Long id) {
+        boolean deleted = temaService.deleteTema(id);
         if (deleted) {
             return ResponseEntity.noContent().build();
         } else {
@@ -76,3 +74,4 @@ public class CursoController {
         }
     }
 }
+

@@ -1,10 +1,14 @@
 package proyectos.spring.response;
+import java.util.List;
 
-public class LoginResponse {
+import proyectos.spring.model.Curso;
+
+
+public class LoginResponseProfesor {
     private boolean success;
     private String message;
 
-    public LoginResponse(boolean success, String message) {
+    public LoginResponseProfesor(boolean success, String message) {
         this.success = success;
         this.message = message;
     }
@@ -25,3 +29,4 @@ public class LoginResponse {
         this.message = message;
     }
 }
+
