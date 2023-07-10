@@ -7,14 +7,14 @@ const Notas = () => {
     { materia: 'Matemáticas', nota: 'B' },
     { materia: 'Historia', nota: 'A' },
     { materia: 'Ciencias', nota: 'C' },
-    { materia: 'Lenguaje', nota: 'B' },
+    { materia: 'Literatura', nota: 'B' },
+    { materia: 'Geografía', nota: 'C' },
+    { materia: 'Educación Fisica', nota: 'B' },
   ];
-
   return (
     <Menu>
     <div className="container">
       <h1 className="text-center">Notas del Alumno</h1>
-
       <table className="table notas-table">
         <thead className="thead-dark">
           <tr>

@@ -1,9 +1,9 @@
 .temario {
-  background-color:rgb(133, 226, 243);
+  background-color:rgb(182, 238, 248);
   padding: 20px;
 }
 body {
-  background-color: rgb(133, 226, 243);
+  background-color: rgb(214, 249, 255);
 }
 .temario__heading {
   color: black;
@@ -39,8 +39,8 @@ body {
 
 .temario__table th,
 .temario__table td {
-  padding: 10px;
-  border: 1px solid black;
+  padding: 2px;
+  border: 2px solid black;
 }
 
 .temario__table th {
@@ -54,4 +54,8 @@ body {
 
 .temario__temas li {
   margin-bottom: 5px;
+}
+.temario__table-small {
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+  /* Otros estilos de reducción de tamaño de la tabla */
 }

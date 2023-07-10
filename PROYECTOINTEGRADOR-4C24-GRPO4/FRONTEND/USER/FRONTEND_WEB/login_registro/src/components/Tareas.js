@@ -35,7 +35,7 @@ const Tareas = () => {
   return (
     <Menu>
       <div className="container">
-        <h1 className="text-dark text-center">Tareas</h1>
+        <h1 className="text-dark text-center"><b>Tareas</b></h1>
         <div className="row">
           <div className="mb-4">
             <div className="col-md-3">

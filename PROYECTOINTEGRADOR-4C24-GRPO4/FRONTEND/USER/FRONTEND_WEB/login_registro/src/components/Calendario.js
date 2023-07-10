@@ -1,6 +1,8 @@
 import React from 'react';
 import '../assets/css/Calendar.css';
 import Menu from './Menu';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+
 class Calendar extends React.Component {
   constructor(props) {
     super(props);
@@ -30,13 +32,17 @@ class Calendar extends React.Component {
         <h2 className="calendar__heading" style={{ fontWeight: 'bold' }}>Calendario</h2>
         <div className="calendar__nav">
           <button className="calendar__nav-btn" onClick={this.prevMonth}>
+            <FaChevronLeft />
             Anterior
           </button>
+          
           <span className="calendar__current-date">
             {currentDate.toLocaleString('default', { month: 'long' })} {currentDate.getFullYear()}
           </span>
+          
           <button className="calendar__nav-btn" onClick={this.nextMonth}>
             Siguiente
+            <FaChevronRight />
           </button>
         </div>
         <table className="calendar__table">

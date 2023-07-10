@@ -10,14 +10,19 @@
   }
   
   .welcome-container {
-    padding: 2rem;
+    padding: 1rem;
   }
   
   .welcome-container input {
     width: 100%;
   }
-  
   .carousel {
-    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: auto;
   }
   

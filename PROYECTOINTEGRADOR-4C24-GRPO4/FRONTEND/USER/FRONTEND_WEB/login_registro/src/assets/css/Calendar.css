@@ -1,11 +1,14 @@
 .calendar {
     font-family: Arial, sans-serif;
     margin: 0 auto;
-    width: 400px;
+    width: 100%;
     text-align: center;
     margin: 100px auto 0; 
+    max-width: 1000px;
+    padding: 30px;
   }
-  
+
+
   .calendar__heading {
     font-size: 24px;
     margin-bottom: 10px;
@@ -46,4 +49,7 @@
   .calendar__day.other-month {
     color: #ccc;
   }
-  
+  .small-image {
+    max-width: 100%;
+    height: auto;
+  }

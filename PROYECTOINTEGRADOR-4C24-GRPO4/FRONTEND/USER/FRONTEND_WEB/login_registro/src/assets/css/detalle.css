@@ -1,12 +1,38 @@
 .custom-bg {
+  margin: 50px auto 0;
+  width: 150%;
+  min-height: auto;
+  max-width: 700px;
+}
 
-    margin: 50px auto 0; 
-  }
-  .alumno-image {
-    max-width: 100px;
-  }
-  
-  .small-image {
-    max-width: 100px;
-  }
-  
+.alumno-image{
+  max-width: 120px;
+}
+
+.small-image {
+  max-width: 100%;
+  height: auto;
+}
+.link-black {
+  color: black;
+}
+.link-black {
+  color: black;
+}
+.nav-link {
+  font-size: 20px;
+  padding: 8px 16px;
+}
+
+.sub-menu .nav-link {
+  font-size: 20px;
+  padding: 6px 14px;
+}
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+.card {
+  width: 100%;
+}

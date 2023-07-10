@@ -1,0 +1,36 @@
+.notificacion__list {
+    margin-top: 20px;
+  }
+  
+  .notificacion__item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #f6eded65;
+  }
+  
+  .notificacion__icon {
+    margin-right: 10px;
+    color: #707070;
+  }
+  .notificacion__imagen {
+    width: 50px; /* Ajusta el tamaño según tus necesidades */
+    height: 50px;
+  }
+  .notificacion__titulo {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .notificacion__mensaje {
+    margin-bottom: 5px;
+  }
+  
+  .notificacion__fecha {
+    color: #707070;
+  }
+  
