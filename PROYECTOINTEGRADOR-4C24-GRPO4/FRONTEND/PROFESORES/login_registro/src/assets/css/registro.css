@@ -1,0 +1,32 @@
+.registro-container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    min-height: 10px; /* Ejemplo de altura mínima */
+    background-image: url('/public/re.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .registro-container .border {
+    background-color: rgba(187, 230, 244, 0.75);
+  }
+  
+  .registro-header {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    background-color: #2e71ee; /* Cambia este valor al color celeste más claro que desees */
+  }
+  
+  .registro-header h1 {
+    text-align: center;
+    color: white;
+  }
+  
+  .registro-form {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+  }
+  
