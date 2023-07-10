@@ -1,17 +1,10 @@
 package proyectos.spring.model;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -37,80 +30,58 @@ public class Profesor {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "password", length = 100)
-    private String password;
+    // Constructor
 
-    @ManyToMany
-    @JoinTable(
-        name = "profesor_curso",
-        joinColumns = @JoinColumn(name = "idProfesor"),
-        inverseJoinColumns = @JoinColumn(name = "idCurso")
-    )
-    private List<Curso> cursos;
+    public Profesor() {
+    }
 
-	public Long getIdProfesor() {
-		return idProfesor;
-	}
+    // Getters y Setters
 
-	public void setIdProfesor(Long idProfesor) {
-		this.idProfesor = idProfesor;
-	}
+    public Long getIdProfesor() {
+        return idProfesor;
+    }
 
-	public String getNombres() {
-		return nombres;
-	}
+    public void setIdProfesor(Long idProfesor) {
+        this.idProfesor = idProfesor;
+    }
 
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
-	}
+    public String getNombres() {
+        return nombres;
+    }
 
-	public String getApellidos() {
-		return apellidos;
-	}
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
+    public String getApellidos() {
+        return apellidos;
+    }
 
-	public String getDireccion() {
-		return direccion;
-	}
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
+    public String getDireccion() {
+        return direccion;
+    }
 
-	public String getTelefono() {
-		return telefono;
-	}
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
 
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
+    public String getTelefono() {
+        return telefono;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public List<Curso> getCursos() {
-		return cursos;
-	}
-
-	public void setCursos(List<Curso> cursos) {
-		this.cursos = cursos;
-	}
-
-    // Getters and Setters
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

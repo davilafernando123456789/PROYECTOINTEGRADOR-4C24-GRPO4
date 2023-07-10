@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import proyectos.spring.model.Tarea;
 import proyectos.spring.repository.TareaRepository;
-import proyectos.spring.repository.TareasRepository;
+
 
 @Service
 public class TareaService {
@@ -47,5 +47,8 @@ public class TareaService {
     public List<Tarea> getAllTareas() {
         return tareaRepository.findAll();
     }
+  //  public List<Tarea> getTareasByCursoId(Long cursoId) {
+   // tareaRepository.findByCursoId(cursoId);
+    //}
 }
 

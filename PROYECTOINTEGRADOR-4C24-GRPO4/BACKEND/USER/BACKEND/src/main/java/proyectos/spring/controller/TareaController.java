@@ -62,4 +62,10 @@ public class TareaController {
             return ResponseEntity.notFound().build();
         }
     }
+   // @GetMapping("/tareas/curso/{idCurso}")
+    //public ResponseEntity<List<Tarea>> getTareasByCursoId(@PathVariable Long idCurso) {
+    //    List<Tarea> tareas = tareaService.getTareasByCursoId(idCurso);
+   //     return ResponseEntity.ok(tareas);
+    //}
+
 }

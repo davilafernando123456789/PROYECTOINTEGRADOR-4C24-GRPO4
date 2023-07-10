@@ -24,107 +24,47 @@ public class Usuario {
     @Column(name = "idUsuario")
     private Long idUsuario;
 
-    @Column(name = "nombres")
-    private String nombres;
-
-    @Column(name = "apellidos")
-    private String apellidos;
-
-    @Column(name = "fechaNac")
-    private String fechaNac;
-
-    @Column(name = "genero", length = 1)
-    private String genero;
-
-    @Column(name = "email", unique = true)
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "password")
+    @Column(name = "password", length = 100)
     private String password;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idGrado")
-    @JsonIgnore
-    private Grado idGrado;
+    @ManyToOne
+    @JoinColumn(name = "idAlumno")
+    private Alumno idAlumno;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idCurso")
-    @JsonIgnore
-    private Curso idCurso;
+    // Constructor, getters y setters
 
-	public Long getIdUsuario() {
-		return idUsuario;
-	}
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
 
-	public void setIdUsuario(Long idUsuario) {
-		this.idUsuario = idUsuario;
-	}
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
-	public String getNombres() {
-		return nombres;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getApellidos() {
-		return apellidos;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public String getFechaNac() {
-		return fechaNac;
-	}
+    public Alumno getIdAlumno() {
+        return idAlumno;
+    }
 
-	public void setFechaNac(String fechaNac) {
-		this.fechaNac = fechaNac;
-	}
-
-	public String getGenero() {
-		return genero;
-	}
-
-	public void setGenero(String genero) {
-		this.genero = genero;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Grado getIdGrado() {
-		return idGrado;
-	}
-
-	public void setIdGrado(Grado idGrado) {
-		this.idGrado = idGrado;
-	}
-
-	public Curso getIdCurso() {
-		return idCurso;
-	}
-
-	public void setIdCurso(Curso idCurso) {
-		this.idCurso = idCurso;
-	}
-
-    // Getters and Setters
+    public void setIdAlumno(Alumno idAlumno) {
+        this.idAlumno = idAlumno;
+    }
 }
-    
-

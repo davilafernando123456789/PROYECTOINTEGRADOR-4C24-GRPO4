@@ -9,6 +9,5 @@ import proyectos.spring.model.Profesor;
 
 @Repository
 public interface ProfesorRepository extends JpaRepository<Profesor, Long> {
-    Profesor findByEmail(String email);
-    Optional<Profesor> findById(Long idProfesor);
+    Optional<Profesor> findByEmail(String correo);
 }

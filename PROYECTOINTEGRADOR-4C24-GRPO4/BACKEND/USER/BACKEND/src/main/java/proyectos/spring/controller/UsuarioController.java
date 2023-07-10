@@ -58,13 +58,15 @@ public class UsuarioController {
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponseUser> login(@RequestParam("email") String email, @RequestParam("password") String password) {
-
         boolean loginSuccessful = usuarioService.login(email, password);
 
         if (loginSuccessful) {
-            return ResponseEntity.ok(new LoginResponseUser(true, "Login successful"));
+            Usuario usuario = usuarioService.findByEmail(email);
+            Long idAlumno = usuario.getIdAlumno().getIdAlumno(); // Obtén el idAlumno después de la autenticación
+            String nombres = usuario.getIdAlumno().getNombres(); // Obtén el nombre del alumno
+            return ResponseEntity.ok(new LoginResponseUser(true, "Login successful", idAlumno, nombres));
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new LoginResponseUser(false, "Invalid credentials"));
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new LoginResponseUser(false, "Invalid credentials", null, null));
         }
     }
 }

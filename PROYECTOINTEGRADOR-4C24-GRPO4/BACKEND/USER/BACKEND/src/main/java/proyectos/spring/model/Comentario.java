@@ -20,47 +20,76 @@ public class Comentario {
     @Column(name = "idComentario")
     private Long idComentario;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idUsuario")
-    private Usuario idUsuario;
+    @ManyToOne
+    @JoinColumn(name = "idAlumno")
+    private Alumno alumno;
+
+    @Column(name = "comentario", length = 200)
+    private String comentario;
+
+    @Column(name = "respuesta", length = 200)
+    private String respuesta;
 
     @Column(name = "fecha")
-    private LocalDateTime fecha;
+    private String fecha;
 
     @Column(name = "meGusta")
     private Integer meGusta;
 
-	public Long getIdComentario() {
-		return idComentario;
+    // Constructor
+
+    public Comentario() {
+    }
+
+    // Getters y Setters
+
+    public Long getIdComentario() {
+        return idComentario;
+    }
+
+    public void setIdComentario(Long idComentario) {
+        this.idComentario = idComentario;
+    }
+    
+
+
+    public Alumno getAlumno() {
+		return alumno;
 	}
 
-	public void setIdComentario(Long idComentario) {
-		this.idComentario = idComentario;
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
 	}
 
-	public Usuario getIdUsuario() {
-		return idUsuario;
-	}
+	public String getComentario() {
+        return comentario;
+    }
 
-	public void setIdUsuario(Usuario idUsuario) {
-		this.idUsuario = idUsuario;
-	}
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
 
-	public LocalDateTime getFecha() {
-		return fecha;
-	}
+    public String getRespuesta() {
+        return respuesta;
+    }
 
-	public void setFecha(LocalDateTime fecha) {
-		this.fecha = fecha;
-	}
+    public void setRespuesta(String respuesta) {
+        this.respuesta = respuesta;
+    }
 
-	public Integer getMeGusta() {
-		return meGusta;
-	}
+    public String getFecha() {
+        return fecha;
+    }
 
-	public void setMeGusta(Integer meGusta) {
-		this.meGusta = meGusta;
-	}
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
 
-    // Getters and Setters
+    public Integer getMeGusta() {
+        return meGusta;
+    }
+
+    public void setMeGusta(Integer meGusta) {
+        this.meGusta = meGusta;
+    }
 }

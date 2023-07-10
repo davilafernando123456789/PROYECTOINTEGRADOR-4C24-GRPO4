@@ -1,6 +1,7 @@
 package proyectos.spring.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,53 +27,19 @@ import proyectos.spring.service.CursoService;
 public class CursoController {
     private final CursoService cursoService;
 
+    @Autowired
     public CursoController(CursoService cursoService) {
         this.cursoService = cursoService;
     }
-    
+
     @GetMapping
-    public ResponseEntity<List<Curso>> getAllCursos() {
-        List<Curso> cursos = cursoService.getAllCursos();
-        if (!cursos.isEmpty()) {
-            return ResponseEntity.ok(cursos);
-        } else {
-            return ResponseEntity.noContent().build();
-        }
+    public List<Curso> getAllCursos() {
+        return cursoService.getAllCursos();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Curso> getCursoById(@PathVariable("id") Long id) {
-        Curso curso = cursoService.getCursoById(id);
-        if (curso != null) {
-            return ResponseEntity.ok(curso);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public Optional<Curso> getCursoById(@PathVariable Long id) {
+        return cursoService.getCursoById(id);
     }
 
-    @PostMapping
-    public ResponseEntity<Curso> createCurso(@RequestBody Curso curso) {
-        Curso createdCurso = cursoService.createCurso(curso);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdCurso);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Curso> updateCurso(@PathVariable("id") Long id, @RequestBody Curso curso) {
-        Curso updatedCurso = cursoService.updateCurso(id, curso);
-        if (updatedCurso != null) {
-            return ResponseEntity.ok(updatedCurso);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCurso(@PathVariable("id") Long id) {
-        boolean deleted = cursoService.deleteCurso(id);
-        if (deleted) {
-            return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
 }

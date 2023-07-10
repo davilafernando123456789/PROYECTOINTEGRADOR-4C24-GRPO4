@@ -9,7 +9,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-
 @Entity
 @Table(name = "libro")
 public class Libro {
@@ -21,32 +20,35 @@ public class Libro {
     @Column(name = "nombre", length = 45)
     private String nombre;
 
-    @Column(name = "detalle", length = 45, nullable = true)
-    private String detalle;
+    @Column(name = "pdf", length = 45)
+    private String pdf;
 
-	public Long getIdLibro() {
-		return idLibro;
-	}
+    // Constructor, getters y setters
 
-	public void setIdLibro(Long idLibro) {
-		this.idLibro = idLibro;
-	}
+    public Libro() {
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public Long getIdLibro() {
+        return idLibro;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setIdLibro(Long idLibro) {
+        this.idLibro = idLibro;
+    }
 
-	public String getDetalle() {
-		return detalle;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setDetalle(String detalle) {
-		this.detalle = detalle;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    // Getters and Setters
+    public String getPdf() {
+        return pdf;
+    }
+
+    public void setPdf(String pdf) {
+        this.pdf = pdf;
+    }
 }

@@ -2,12 +2,9 @@ package proyectos.spring.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,9 +18,6 @@ public class Bimestre {
     @Column(name = "nombre", length = 45)
     private String nombre;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idCurso")
-    private Curso idCurso;
 
 	public Long getIdBimestre() {
 		return idBimestre;
@@ -41,14 +35,5 @@ public class Bimestre {
 		this.nombre = nombre;
 	}
 
-	public Curso getIdCurso() {
-		return idCurso;
-	}
-
-	public void setIdCurso(Curso idCurso) {
-		this.idCurso = idCurso;
-	}
-
-    // Getters and Setters
 }
 

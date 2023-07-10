@@ -12,6 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 
+
 @Entity
 @Table(name = "tarea")
 public class Tarea {
@@ -20,20 +21,22 @@ public class Tarea {
     @Column(name = "idTarea")
     private Long idTarea;
 
-    @Column(name = "nombre")
+    @ManyToOne
+    @JoinColumn(name = "idCurso")
+    private Curso curso;
+
+    @Column(name = "nombre", length = 45)
     private String nombre;
 
-    @Column(name = "descripcion")
+    @Column(name = "descripcion", length = 150)
     private String descripcion;
 
-    @Column(name = "entrega", length = 150, nullable = true)
+    @Column(name = "entrega", length = 150)
     private String entrega;
 
     @Column(name = "FechaEntrega")
-    private LocalDate fechaEntrega;
+    private String fechaEntrega;
 
-    @Column(name = "calificacion", length = 10, nullable = true)
-    private String calificacion;
 
 	public Long getIdTarea() {
 		return idTarea;
@@ -41,6 +44,14 @@ public class Tarea {
 
 	public void setIdTarea(Long idTarea) {
 		this.idTarea = idTarea;
+	}
+
+	public Curso getCurso() {
+		return curso;
+	}
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
 
 	public String getNombre() {
@@ -67,21 +78,14 @@ public class Tarea {
 		this.entrega = entrega;
 	}
 
-	public LocalDate getFechaEntrega() {
+	public String getFechaEntrega() {
 		return fechaEntrega;
 	}
 
-	public void setFechaEntrega(LocalDate fechaEntrega) {
+	public void setFechaEntrega(String fechaEntrega) {
 		this.fechaEntrega = fechaEntrega;
 	}
+    
+    
 
-	public String getCalificacion() {
-		return calificacion;
-	}
-
-	public void setCalificacion(String calificacion) {
-		this.calificacion = calificacion;
-	}
-
-    // Getters and Setters
 }

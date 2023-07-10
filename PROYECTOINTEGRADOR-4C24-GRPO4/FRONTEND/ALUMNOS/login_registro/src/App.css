@@ -1,0 +1,11 @@
+.bg-image {
+    background-image: url('https://www.aeit.es/sites/default/files/styles/full_screen/public/news/futurismo.jpg?itok=SkbZjMxM');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  

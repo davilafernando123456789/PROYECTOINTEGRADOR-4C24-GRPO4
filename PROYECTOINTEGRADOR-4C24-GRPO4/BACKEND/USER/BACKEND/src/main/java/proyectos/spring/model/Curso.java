@@ -26,100 +26,68 @@ public class Curso {
     @Column(name = "nombre", length = 45)
     private String nombre;
 
-    @Column(name = "descripcion")
+    @Column(name = "descripcion", length = 45)
     private String descripcion;
 
-    @Column(name = "nota1", length = 45, nullable = true)
-    private String nota1;
+    @ManyToOne
+    @JoinColumn(name = "idProfesor")
+    private Profesor idProfesor;
 
-    @Column(name = "nota2", length = 45, nullable = true)
-    private String nota2;
-
-    @Column(name = "nota3", length = 45, nullable = true)
-    private String nota3;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "idTema")
     private Tema idTema;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idTarea")
-    private Tarea idTarea;
+    @ManyToOne
+    @JoinColumn(name = "idBimestre")
+    private Bimestre idBimestre;
 
-    @ManyToMany(mappedBy = "cursos")
-    private List<Profesor> profesores;
+    // Constructor, getters y setters
 
-	public Long getIdCurso() {
-		return idCurso;
-	}
+    public Long getIdCurso() {
+        return idCurso;
+    }
 
-	public void setIdCurso(Long idCurso) {
-		this.idCurso = idCurso;
-	}
+    public void setIdCurso(Long idCurso) {
+        this.idCurso = idCurso;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public String getDescripcion() {
-		return descripcion;
-	}
+    public String getDescripcion() {
+        return descripcion;
+    }
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
-	public String getNota1() {
-		return nota1;
-	}
+    public Profesor getIdProfesor() {
+        return idProfesor;
+    }
 
-	public void setNota1(String nota1) {
-		this.nota1 = nota1;
-	}
+    public void setIdProfesor(Profesor idProfesor) {
+        this.idProfesor = idProfesor;
+    }
 
-	public String getNota2() {
-		return nota2;
-	}
+    public Tema getIdTema() {
+        return idTema;
+    }
 
-	public void setNota2(String nota2) {
-		this.nota2 = nota2;
-	}
+    public void setIdTema(Tema idTema) {
+        this.idTema = idTema;
+    }
 
-	public String getNota3() {
-		return nota3;
-	}
+    public Bimestre getIdBimestre() {
+        return idBimestre;
+    }
 
-	public void setNota3(String nota3) {
-		this.nota3 = nota3;
-	}
-
-	public Tema getIdTema() {
-		return idTema;
-	}
-
-	public void setIdTema(Tema idTema) {
-		this.idTema = idTema;
-	}
-
-	public Tarea getIdTarea() {
-		return idTarea;
-	}
-
-	public void setIdTarea(Tarea idTarea) {
-		this.idTarea = idTarea;
-	}
-
-	public List<Profesor> getProfesores() {
-		return profesores;
-	}
-
-	public void setProfesores(List<Profesor> profesores) {
-		this.profesores = profesores;
-	}
-
-    // Getters and Setters
+    public void setIdBimestre(Bimestre idBimestre) {
+        this.idBimestre = idBimestre;
+    }
 }

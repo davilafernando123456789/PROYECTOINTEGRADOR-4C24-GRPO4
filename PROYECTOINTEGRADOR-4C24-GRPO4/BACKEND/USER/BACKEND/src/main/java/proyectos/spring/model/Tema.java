@@ -10,6 +10,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+
 @Entity
 @Table(name = "tema")
 public class Tema {
@@ -21,33 +22,36 @@ public class Tema {
     @Column(name = "nombre", length = 45)
     private String nombre;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "idLibro")
-    private Libro idLibro;
+    private Libro libro;
 
-	public Long getIdTema() {
-		return idTema;
-	}
+    // Constructor, getters y setters
 
-	public void setIdTema(Long idTema) {
-		this.idTema = idTema;
-	}
+    public Tema() {
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public Long getIdTema() {
+        return idTema;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setIdTema(Long idTema) {
+        this.idTema = idTema;
+    }
 
-	public Libro getIdLibro() {
-		return idLibro;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setIdLibro(Libro idLibro) {
-		this.idLibro = idLibro;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    // Getters and Setters
+    public Libro getLibro() {
+        return libro;
+    }
+
+    public void setLibro(Libro libro) {
+        this.libro = libro;
+    }
 }
