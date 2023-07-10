@@ -1,0 +1,17 @@
+.bg-image {
+    background-image: url('https://crehana-blog.imgix.net/media/filer_public/72/92/729243d3-0d4a-455b-b680-ec4f8ab237a1/tecnologia-futurista-glass.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .card {
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+  
+  
+  
