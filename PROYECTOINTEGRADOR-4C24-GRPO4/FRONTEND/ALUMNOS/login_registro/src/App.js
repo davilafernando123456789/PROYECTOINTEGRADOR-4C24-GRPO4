@@ -13,9 +13,10 @@ import Login from './components/Login';
 import Gpt from './components/Gpt';
 import Tareas from './components/Tareas';
 import Cursos from './components/Cursos';
+
 import Notas from './components/Notas';
 import Horario from './components/Horario';
-import Detallecurso from './components/Detallecurso';
+import DetallesCurso from './components/Detallescurso';
 import Configuraciones from './components/Configuraciones';
 import Calendario from './components/Calendario';
 import Temario from './components/Temario';
@@ -30,7 +31,8 @@ import LinkPage from './components/LinkPage';
 import RequireAuth from './components/RequireAuth';
 import PersistLogin from './components/PersistLogin';
 import AnswerSection from './components/AnswerSection';
-
+import Notificaciones from './components/Notificaciones';
+import Docente from './components/Docente';
 
 const ROLES = {
   'User': 2001,
@@ -56,8 +58,10 @@ function App() {
         <Route path="menu" element={<Menu />} />
         <Route path="tareas" element={<Tareas />} />
         <Route path="cursos" element={<Cursos />} />
+       
         <Route path="horario" element={<Horario />} />
-        <Route path="detallecurso" element={<Detallecurso />} />
+        <Route path="notificaciones" element={<Notificaciones />} />
+        <Route path="detallesCurso" element={<DetallesCurso />} />
         <Route path="configuraciones" element={<Configuraciones />} />
         <Route path="comentarios" element={<Comentarios />} />
         <Route path="notas" element={<Notas />} />
@@ -68,6 +72,7 @@ function App() {
         <Route path="chatbox" element={<Gpt openai={openai} />} />
         <Route path="linkpage" element={<LinkPage />} />
         <Route path="unauthorized" element={<Unauthorized />} />
+        <Route path="docente" element={<Docente />} />
 
         {/* we want to protect these routes */}
         <Route element={<PersistLogin />}>

@@ -1,7 +1,7 @@
 .calendar {
     font-family: Arial, sans-serif;
     margin: 0 auto;
-    width: 400px;
+    width: 800px;
     text-align: center;
     margin: 100px auto 0; 
   }
@@ -45,5 +45,10 @@
   
   .calendar__day.other-month {
     color: #ccc;
+  }
+  .calendar__table th,
+  .calendar__table td {
+    padding: 10px;
+    text-align: center;
   }
   

@@ -19,5 +19,14 @@
   
   .carousel {
     margin-top: 2rem;
+    width: 80%;
+    height: auto;
   }
-  
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+  .menu-container {
+    background-color: #d0e6f056; /* Color celeste */
+  }

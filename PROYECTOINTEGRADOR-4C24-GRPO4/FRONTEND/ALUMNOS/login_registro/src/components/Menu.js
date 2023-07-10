@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuth } from '../AuthContext';
 import { RiFileTextLine, RiDashboardLine, RiFileListLine, RiBookOpenLine, RiChatSmile3Line, RiSettings5Line, RiCalendarLine } from 'react-icons/ri';
 import Carousel from 'react-bootstrap/Carousel';
+import '../assets/css/menu.css';
 
 const Menu = ({ children }) => {
   const { authData } = useAuth();
@@ -14,8 +15,8 @@ const Menu = ({ children }) => {
   };
 
   return (
-    <div className="d-flex">
-      <div className="d-flex flex-column flex-shrink-0 p-3 text-light bg-dark" style={{ width: '280px', height: '100vh' }}>
+    <div className="d-flex menu-container">
+      <div className="d-flex flex-column flex-shrink-0 p-3 text-light bg-primary" style={{ width: '280px', height: '100vh' }}>
         <header className="bg-primary py-3">
           <div className="container">
             <h1 className="text-light">GeniusTec</h1>
@@ -25,7 +26,7 @@ const Menu = ({ children }) => {
         <div className="mt-3">
           <div className="mt-auto">
             <div className="d-flex align-items-center text-light">
-              <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
+              <img src="https://static.vecteezy.com/system/resources/previews/007/033/146/non_2x/profile-icon-login-head-icon-vector.jpg" alt="" width="32" height="32" className="rounded-circle me-2" />
               <strong>{nombres}</strong>
             </div>
           </div>
@@ -40,32 +41,27 @@ const Menu = ({ children }) => {
             <li className="nav-item">
               <button className="nav-link active d-flex align-items-center" onClick={toggleCursos}>
                 <RiDashboardLine size={16} className="me-2" />
-                Cursos
+                Módulos
               </button>
               {cursosOpen && (
                 <ul className="nav nav-pills flex-column">
-                  <li>
-                    <a href="/Temario" className="nav-link text-light">
-                      <RiFileListLine size={16} className="me-2" />
-                      Temario
-                    </a>
-                  </li>
-                  <li>
+                                    <li>
                     <a href="/Cursos" className="nav-link text-light">
                       <RiFileListLine size={16} className="me-2" />
                       Cursos
                     </a>
                   </li>
                   <li>
+                    <a href="/Temario" className="nav-link text-light">
+                      <RiFileListLine size={16} className="me-2" />
+                      Temario
+                    </a>
+                  </li>
+
+                  <li>
                     <a href="/Notas" className="nav-link text-light">
                       <RiFileListLine size={16} className="me-2" />
                       Notas
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Tareas" className="nav-link text-light">
-                      <RiBookOpenLine size={16} className="me-2" />
-                      Tareas
                     </a>
                   </li>
                   <li>
@@ -76,6 +72,12 @@ const Menu = ({ children }) => {
                   </li>
                 </ul>
               )}
+            </li>
+            <li>
+              <a href="/Tareas" className="nav-link text-light">
+                <RiFileTextLine size={16} className="me-2" />
+                Tareas
+              </a>
             </li>
             <li>
               <a href="/Chatbox" className="nav-link text-light">
@@ -95,20 +97,16 @@ const Menu = ({ children }) => {
                 Calendario
               </a>
             </li>
-            <li>
-              <a href="/Configuraciones" className="nav-link text-light">
-                <RiSettings5Line size={16} className="me-2" />
-                Configuración
-              </a>
-            </li>
-            <li>
-              <a href="/" className="nav-link text-light">
-                <RiDashboardLine size={16} className="me-2" />
-                Cerrar sesión
-              </a>
-            </li>
           </ul>
         </div>
+        <div className="mt-auto">
+ 
+        <a href="/" className="nav-link text-light">
+          <RiDashboardLine size={16} className="me-2" />
+          Cerrar sesión
+        </a>
+
+    </div>
       </div>
       <div className="flex-grow-1">
         {children !== undefined ? (
@@ -116,7 +114,7 @@ const Menu = ({ children }) => {
         ) : (
           <div className="flex-grow-1 ">
             <div className="container">
-              <h1 className="text-primary">Bienvenido, {nombres}</h1>
+              <h1 className="text-primary">Bienvenido(a), {nombres}</h1>
               <div className="row">
                 <div className="mb-4">
                   <div className="col-md-3">
@@ -126,15 +124,36 @@ const Menu = ({ children }) => {
               </div>
             </div>
             <div className="justify-content-center">
-              <Carousel className="col-md-8 mx-auto">
+            <Carousel className="col-md-8 mx-auto">
                 <Carousel.Item>
-                  <img className="d-block w-100" src="/login.avif" alt="Imagen 1" />
+                  <img className="d-block w-100 h-auto" src="https://mmedia.eluniversal.com/19424/hoy-se-celebra-el-dia-internacional-de-la-mujer-121820.jpg" alt="Imagen 1" />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img className="dblock w-100" src="/login.avif" alt="Imagen 2" />
+                  <img className="d-block w-100 h-auto" src="https://ceseconsultores.com/wp-content/uploads/2021/03/dia-mundial-agua.jpg" alt="Imagen 2" />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img className="d-block w-100" src="/login.avif" alt="Imagen 3" />
+                  <img className="d-block w-100 h-auto" src="https://i.ytimg.com/vi/_Ac0ny66_zE/maxresdefault.jpg" alt="Imagen 3" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img className="d-block w-100 h-auto" src="https://i0.wp.com/educarplus.com/wp-content/uploads/2021/06/Dia-de-la-madre-segundo-domingo-de-mayo.jpg" alt="Imagen 4" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img className="d-block w-100 h-auto" src="https://i0.wp.com/educarplus.com/wp-content/uploads/2021/06/Dia-del-Padre-Tercer-Domingo-de-Junio.jpg" alt="Imagen 5" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img className="d-block w-100 h-auto" src="https://noticias-pe.laiglesiadejesucristo.org/media/960x540/Dia-del-Maestro-0.jpg" alt="Imagen 6" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img className="d-block w-100 h-auto" src="https://800noticias.com/cms/wp-content/uploads/2020/08/Santa-Rosa-de-Lima-30-de-agosto.jpg" alt="Imagen 7" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img className="d-block w-100 h-auto" src="https://www.consejosdeldia.com/wp-content/uploads/2021/09/diadelaprimavera.jpg" alt="Imagen 8" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img className="d-block w-100 h-auto" src="https://noticias-pe.laiglesiadejesucristo.org/media/960x540/Dia-Periodista-Peruano-0.jpg" alt="Imagen 9" />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img className="d-block w-100 h-auto" src="https://pbs.twimg.com/media/En2Ckf1W8AcVBMf.jpg" alt="Imagen 10" />
                 </Carousel.Item>
               </Carousel>
             </div>

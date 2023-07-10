@@ -11,7 +11,7 @@ const Tareas = () => {
     const fetchTareas = async () => {
       try {
         const idAlumno = authData?.idAlumno;
-        const response = await axios.get(`http://localhost:8080/Realizartareas/alumno/${idAlumno}`);
+        const response = await axios.get(`http://localhost:8090/Realizartareas/alumno/${idAlumno}`);
         setTareas(response.data);
       } catch (error) {
         console.error(error);
@@ -38,13 +38,18 @@ const Tareas = () => {
           {tareas.map((tarea) => (
             <div className="col-md-4 mb-4" key={tarea.idRealizacionTarea}>
               <div className="card">
-                <img src={tarea.tarea.imagen} className="card-img-top" alt={tarea.tarea.titulo} />
+              <img
+                  src='https://cdn-icons-png.flaticon.com/512/747/747094.png'
+                  className="docente__imagen"
+                  alt="Imagen del docente"
+                />
                 <div className="card-body">
+                  
                   <h5 className="card-title">{tarea.tarea.nombre}</h5>
                   <p className="card-text">{tarea.tarea.descripcion}</p>
                   <p className="card-text">Curso: {tarea.tarea.curso.nombre}</p>
                   <p className="card-text">Fecha de entrega: {tarea.tarea.fechaEntrega}</p>
-                  <a href="#" className="btn btn-primary">Completar</a>
+                  <a href="#" className="btn btn-primary">Empezar</a>
                 </div>
               </div>
             </div>

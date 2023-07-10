@@ -1,21 +1,24 @@
+/* nota.css */
 .notas-table {
-    width: 90%;
-    border-collapse: collapse;
-    margin-top: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-  }
-  
-  .notas-table th,
-  .notas-table td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-  }
-  
-  .notas-table th {
-    background-color: #f0f0f0;
-    font-weight: bold;
-  }
-  
+  width: 100%;
+}
+
+.notas-table th,
+.notas-table td {
+  padding: 10px;
+}
+
+.notas-table th {
+  text-align: left;
+}
+
+.notas-table tbody tr:nth-child(even) {
+  background-color: #cde6ed;
+}
+
+.notas-table tbody tr:hover {
+  background-color: #319af5;
+}
+.notas-table{
+  background-color: #8fc0ea88;
+}

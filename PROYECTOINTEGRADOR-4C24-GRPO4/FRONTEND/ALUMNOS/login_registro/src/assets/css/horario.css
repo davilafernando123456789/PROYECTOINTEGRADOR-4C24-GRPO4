@@ -1,0 +1,25 @@
+/* horario.css */
+.horario-table {
+    width: 100%;
+  }
+  
+  .horario-table th,
+  .horario-table td {
+    padding: 10px;
+  }
+  
+  .horario-table th {
+    text-align: left;
+  }
+  
+  .horario-table tbody tr:nth-child(even) {
+    background-color: #a8d0e2b4;
+  }
+  
+  .horario-table tbody tr:hover {
+    background-color: #90b9d8;
+  }
+  .horario-table{
+    background-color: #c7e3fc88;
+  }
+  

@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from './Menu';
 import { useAuth } from '../AuthContext';
+import '../assets/css/horario.css'; // Importa el archivo CSS
 
 const Horario = () => {
   const { authData } = useAuth();
@@ -22,7 +23,7 @@ const Horario = () => {
         <div className="text-white">
           <strong>{email}</strong>
         </div>
-        <table className="table">
+        <table className="table horario-table">
           <thead>
             <tr>
               <th>Día</th>

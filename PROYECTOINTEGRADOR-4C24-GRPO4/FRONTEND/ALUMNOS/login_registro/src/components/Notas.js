@@ -1,6 +1,9 @@
+// Notas.js
 import React, { useEffect, useState } from 'react';
 import Menu from './Menu';
 import { useAuth } from '../AuthContext';
+import '../assets/css/notas.css';
+import { Link } from 'react-router-dom';
 
 const Notas = () => {
   const { authData } = useAuth();
@@ -9,7 +12,7 @@ const Notas = () => {
 
   useEffect(() => {
     if (idAlumno) {
-      fetch(`http://localhost:8080/notas/alumno/${idAlumno}`)
+      fetch(`http://localhost:8090/notas/alumno/${idAlumno}`)
         .then(response => response.json())
         .then(data => setNotas(data))
         .catch(error => console.log(error));
@@ -18,6 +21,11 @@ const Notas = () => {
 
   return (
     <Menu>
+            <div className="row mt-4 justify-content-center">
+          <div className="col-md-12">
+            <Link to="/Detallescurso" className="link-black">Volver a detalles de Cursos</Link>
+          </div>
+        </div>
       <div className="container">
         <h1 className="text-center">Notas del Alumno</h1>
 

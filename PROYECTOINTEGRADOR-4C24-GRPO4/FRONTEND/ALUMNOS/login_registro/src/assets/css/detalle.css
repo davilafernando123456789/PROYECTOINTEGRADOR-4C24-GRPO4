@@ -3,10 +3,12 @@
     margin: 50px auto 0; 
   }
   .alumno-image {
-    max-width: 100px;
+    max-width: 130px;
+    align-items: center;
   }
   
   .small-image {
-    max-width: 100px;
+    max-width: 130px;
+    align-items: center;
   }
   

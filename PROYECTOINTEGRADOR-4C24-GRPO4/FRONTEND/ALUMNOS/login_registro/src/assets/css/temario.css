@@ -1,10 +1,7 @@
 .temario {
-  background-color:rgb(133, 226, 243);
   padding: 20px;
 }
-body {
-  background-color: rgb(133, 226, 243);
-}
+
 .temario__heading {
   color: black;
   text-align: center;
@@ -17,41 +14,37 @@ body {
 }
 
 .temario__button {
-  margin: 0 10px;
-  padding: 5px 10px;
-  background-color: lightgray;
+  margin-right: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #b98e78;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
 .temario__button.active {
-  background-color: gray;
-  color: white;
+  background-color: #8a65657f;
 }
-
 
 .temario__table {
   width: 100%;
-  margin-top: 20px;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 .temario__table th,
 .temario__table td {
-  padding: 10px;
-  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 .temario__table th {
-  background-color: lightgray;
+  background-color: #7296e9;
 }
 
-.temario__temas {
-  list-style-type: none;
-  padding: 0;
-}
-
-.temario__temas li {
-  margin-bottom: 5px;
+.temario__table a {
+  color: blue;
+  text-decoration: underline;
 }
